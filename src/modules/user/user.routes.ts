@@ -9,17 +9,18 @@ import {
   updateUser,
   deleteUser,
 } from './user.controller';
+import { authMiddleware } from '../../middleware/auth.middleware';
 
 const router = Router();
 
-router.get('/', getAllUsers);
-router.get('/stats', getStats);
-router.get('/id/:id', getUserById);
-router.get('/email/:email', getUserByEmail);
-router.post('/', createUser);
+router.get('/', authMiddleware, getAllUsers);
+router.get('/stats', authMiddleware, getStats);
+router.get('/id/:id', authMiddleware, getUserById);
+router.get('/email/:email', authMiddleware, getUserByEmail);
+router.post('/', authMiddleware, createUser);
 router.post('/register', createUserWithProfile);
-router.put('/:id', updateUser);
-router.patch('/:id', updateUser);
-router.delete('/:id', deleteUser);
+router.put('/:id', authMiddleware, updateUser);
+router.patch('/:id', authMiddleware, updateUser);
+router.delete('/:id', authMiddleware, deleteUser);
 
 export default router;

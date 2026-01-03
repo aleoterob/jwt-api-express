@@ -1,88 +1,91 @@
 import { Request, Response } from 'express';
 import { UserService } from './user.service';
+import { asyncHandler } from '../../utils/asyncHandler';
+import { AppError } from '../../errors/AppError';
+import { ERROR_MESSAGES, ERROR_CODES } from '../../config/errors';
 
 const userService = new UserService();
 
-export const getAllUsers = async (
-  _req: Request,
-  res: Response
-): Promise<void> => {
-  try {
+export const getAllUsers = asyncHandler(
+  async (_req: Request, res: Response): Promise<void> => {
     const users = await userService.getAllUsers();
-    res.json(users);
-  } catch (error) {
-    console.error('Error al obtener usuarios:', error);
-    res.status(500).json({ error: 'Error al obtener los usuarios' });
+    res.json({
+      success: true,
+      data: users,
+    });
   }
-};
+);
 
-export const getUserById = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
+export const getUserById = asyncHandler(
+  async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
 
     if (!id) {
-      res.status(400).json({ error: 'ID es requerido' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.USER.MISSING_ID,
+        400,
+        ERROR_CODES.USER_MISSING_DATA
+      );
     }
 
     const user = await userService.getUserById(id);
 
     if (!user) {
-      res.status(404).json({ error: 'Usuario no encontrado' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.USER.NOT_FOUND,
+        404,
+        ERROR_CODES.USER_NOT_FOUND
+      );
     }
 
-    res.json(user);
-  } catch (error) {
-    console.error('Error al obtener usuario:', error);
-    res.status(500).json({ error: 'Error al obtener el usuario' });
+    res.json({
+      success: true,
+      data: user,
+    });
   }
-};
+);
 
-export const getUserByEmail = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
+export const getUserByEmail = asyncHandler(
+  async (req: Request, res: Response): Promise<void> => {
     const { email } = req.params;
 
     if (!email) {
-      res.status(400).json({ error: 'Email es requerido' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.USER.MISSING_EMAIL,
+        400,
+        ERROR_CODES.USER_MISSING_DATA
+      );
     }
 
     const user = await userService.getUserByEmail(email);
 
     if (!user) {
-      res.status(404).json({ error: 'Usuario no encontrado' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.USER.NOT_FOUND,
+        404,
+        ERROR_CODES.USER_NOT_FOUND
+      );
     }
 
-    res.json(user);
-  } catch (error) {
-    console.error('Error al obtener usuario:', error);
-    res.status(500).json({ error: 'Error al obtener el usuario' });
+    res.json({
+      success: true,
+      data: user,
+    });
   }
-};
+);
 
-export const getStats = async (_req: Request, res: Response): Promise<void> => {
-  try {
+export const getStats = asyncHandler(
+  async (_req: Request, res: Response): Promise<void> => {
     const stats = await userService.getStats();
-    res.json(stats);
-  } catch (error) {
-    console.error('Error al obtener estadísticas:', error);
-    res.status(500).json({ error: 'Error al obtener las estadísticas' });
+    res.json({
+      success: true,
+      data: stats,
+    });
   }
-};
+);
 
-export const createUser = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
+export const createUser = asyncHandler(
+  async (req: Request, res: Response): Promise<void> => {
     const profileData = req.body as {
       id: string;
       email: string;
@@ -90,64 +93,66 @@ export const createUser = async (
     };
 
     if (!profileData.id || !profileData.email) {
-      res.status(400).json({ error: 'ID y email son requeridos' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.VALIDATION.MISSING_REQUIRED_FIELDS,
+        400,
+        ERROR_CODES.VALIDATION_ERROR
+      );
     }
 
     const uuidRegex =
       /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
     if (!uuidRegex.test(profileData.id)) {
-      res.status(400).json({ error: 'ID debe ser un UUID válido' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.USER.INVALID_ID,
+        400,
+        ERROR_CODES.USER_INVALID_ID
+      );
     }
 
-    const user = await userService.createUser(profileData);
-    res.status(201).json(user);
-  } catch (error) {
-    console.error('Error al crear usuario:', error);
-
-    if (error instanceof Error) {
-      if (
-        error.message.includes('foreign key') ||
-        error.message.includes('violates foreign key') ||
-        error.message.includes('debe existir primero en auth.users')
-      ) {
-        res.status(400).json({
-          error:
-            'El usuario debe existir primero en auth.users antes de crear el perfil',
-          details: error.message,
-        });
-        return;
-      }
-
-      if (
-        error.message.includes('duplicate key') ||
-        error.message.includes('unique constraint') ||
-        error.message.includes('ya existe')
-      ) {
-        res.status(409).json({
-          error: 'El perfil ya existe para este usuario',
-          details: error.message,
-        });
-        return;
-      }
-
-      res.status(500).json({
-        error: 'Error al crear el usuario',
-        details: error.message,
+    try {
+      const user = await userService.createUser(profileData);
+      res.status(201).json({
+        success: true,
+        data: user,
       });
-      return;
+    } catch (error) {
+      if (error instanceof Error) {
+        if (
+          error.message.includes('foreign key') ||
+          error.message.includes('violates foreign key') ||
+          error.message.includes('debe existir primero en auth.users')
+        ) {
+          throw new AppError(
+            ERROR_MESSAGES.VALIDATION.FOREIGN_KEY_VIOLATION,
+            400,
+            ERROR_CODES.VALIDATION_FOREIGN_KEY
+          );
+        }
+
+        if (
+          error.message.includes('duplicate key') ||
+          error.message.includes('unique constraint') ||
+          error.message.includes('ya existe')
+        ) {
+          throw new AppError(
+            ERROR_MESSAGES.USER.ALREADY_EXISTS,
+            409,
+            ERROR_CODES.USER_ALREADY_EXISTS
+          );
+        }
+      }
+      throw new AppError(
+        ERROR_MESSAGES.USER.CREATE_FAILED,
+        500,
+        ERROR_CODES.SERVER_INTERNAL_ERROR
+      );
     }
-
-    res.status(500).json({ error: 'Error al crear el usuario' });
   }
-};
+);
 
-export const createUserWithProfile = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
+export const createUserWithProfile = asyncHandler(
+  async (req: Request, res: Response): Promise<void> => {
     const { email, password, full_name, role, bio, avatar_url } = req.body as {
       email: string;
       password: string;
@@ -158,21 +163,28 @@ export const createUserWithProfile = async (
     };
 
     if (!email || !password) {
-      res.status(400).json({ error: 'Email y contraseña son requeridos' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.AUTH.MISSING_EMAIL_PASSWORD,
+        400,
+        ERROR_CODES.AUTH_MISSING_CREDENTIALS
+      );
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      res.status(400).json({ error: 'Email inválido' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.AUTH.INVALID_EMAIL,
+        400,
+        ERROR_CODES.AUTH_INVALID_EMAIL
+      );
     }
 
     if (password.length < 6) {
-      res
-        .status(400)
-        .json({ error: 'La contraseña debe tener al menos 6 caracteres' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.VALIDATION.INVALID_PASSWORD_LENGTH,
+        400,
+        ERROR_CODES.VALIDATION_INVALID_PASSWORD
+      );
     }
 
     const userData: {
@@ -192,49 +204,45 @@ export const createUserWithProfile = async (
     if (bio !== undefined) userData.bio = bio;
     if (avatar_url !== undefined) userData.avatar_url = avatar_url;
 
-    const result = await userService.createUserWithProfile(userData);
+    try {
+      const result = await userService.createUserWithProfile(userData);
 
-    res.status(201).json({
-      user: {
-        id: result.user.id,
-        email: result.user.email,
-        role: result.user.role,
-        created_at: result.user.created_at,
-      },
-      profile: result.profile,
-    });
-  } catch (error) {
-    console.error('Error al crear usuario con perfil:', error);
-
-    if (error instanceof Error) {
-      if (
-        error.message.includes('duplicate key') ||
-        error.message.includes('unique constraint') ||
-        error.message.includes('ya existe')
-      ) {
-        res.status(409).json({
-          error: 'El usuario ya existe',
-          details: error.message,
-        });
-        return;
-      }
-
-      res.status(500).json({
-        error: 'Error al crear el usuario',
-        details: error.message,
+      res.status(201).json({
+        success: true,
+        data: {
+          user: {
+            id: result.user.id,
+            email: result.user.email,
+            role: result.user.role,
+            created_at: result.user.created_at,
+          },
+          profile: result.profile,
+        },
       });
-      return;
+    } catch (error) {
+      if (
+        error instanceof Error &&
+        (error.message.includes('duplicate key') ||
+          error.message.includes('unique constraint') ||
+          error.message.includes('ya existe'))
+      ) {
+        throw new AppError(
+          ERROR_MESSAGES.USER.ALREADY_EXISTS,
+          409,
+          ERROR_CODES.USER_ALREADY_EXISTS
+        );
+      }
+      throw new AppError(
+        ERROR_MESSAGES.USER.CREATE_FAILED,
+        500,
+        ERROR_CODES.SERVER_INTERNAL_ERROR
+      );
     }
-
-    res.status(500).json({ error: 'Error al crear el usuario' });
   }
-};
+);
 
-export const updateUser = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
+export const updateUser = asyncHandler(
+  async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params as { id: string };
     const { email, password, full_name, role, bio, avatar_url } = req.body as {
       email?: string;
@@ -246,30 +254,40 @@ export const updateUser = async (
     };
 
     if (!id) {
-      res.status(400).json({ error: 'ID es requerido' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.USER.MISSING_ID,
+        400,
+        ERROR_CODES.USER_MISSING_DATA
+      );
     }
 
     const uuidRegex =
       /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
     if (!uuidRegex.test(id)) {
-      res.status(400).json({ error: 'ID debe ser un UUID válido' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.USER.INVALID_ID,
+        400,
+        ERROR_CODES.USER_INVALID_ID
+      );
     }
 
     if (email !== undefined) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-        res.status(400).json({ error: 'Email inválido' });
-        return;
+        throw new AppError(
+          ERROR_MESSAGES.AUTH.INVALID_EMAIL,
+          400,
+          ERROR_CODES.AUTH_INVALID_EMAIL
+        );
       }
     }
 
     if (password !== undefined && password.length < 6) {
-      res
-        .status(400)
-        .json({ error: 'La contraseña debe tener al menos 6 caracteres' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.VALIDATION.INVALID_PASSWORD_LENGTH,
+        400,
+        ERROR_CODES.VALIDATION_INVALID_PASSWORD
+      );
     }
 
     const updateData: {
@@ -288,73 +306,73 @@ export const updateUser = async (
     if (bio !== undefined) updateData.bio = bio;
     if (avatar_url !== undefined) updateData.avatar_url = avatar_url;
 
-    const result = await userService.updateUserWithProfile(id, updateData);
+    try {
+      const result = await userService.updateUserWithProfile(id, updateData);
 
-    res.json({
-      user: {
-        id: result.user.id,
-        email: result.user.email,
-        role: result.user.role,
-        updated_at: result.user.updated_at,
-      },
-      profile: result.profile,
-    });
-  } catch (error) {
-    console.error('Error al actualizar usuario:', error);
-
-    if (error instanceof Error) {
-      if (error.message.includes('no encontrado')) {
-        res.status(404).json({
-          error: 'Usuario no encontrado',
-          details: error.message,
-        });
-        return;
-      }
-
-      if (
-        error.message.includes('duplicate key') ||
-        error.message.includes('unique constraint')
-      ) {
-        res.status(409).json({
-          error: 'El email ya está en uso',
-          details: error.message,
-        });
-        return;
-      }
-
-      res.status(500).json({
-        error: 'Error al actualizar el usuario',
-        details: error.message,
+      res.json({
+        success: true,
+        data: {
+          user: {
+            id: result.user.id,
+            email: result.user.email,
+            role: result.user.role,
+            updated_at: result.user.updated_at,
+          },
+          profile: result.profile,
+        },
       });
-      return;
+    } catch (error) {
+      if (error instanceof Error) {
+        if (error.message.includes('no encontrado')) {
+          throw new AppError(
+            ERROR_MESSAGES.USER.NOT_FOUND,
+            404,
+            ERROR_CODES.USER_NOT_FOUND
+          );
+        }
+
+        if (
+          error.message.includes('duplicate key') ||
+          error.message.includes('unique constraint')
+        ) {
+          throw new AppError(
+            ERROR_MESSAGES.VALIDATION.EMAIL_ALREADY_IN_USE,
+            409,
+            ERROR_CODES.VALIDATION_EMAIL_IN_USE
+          );
+        }
+      }
+      throw new AppError(
+        ERROR_MESSAGES.USER.UPDATE_FAILED,
+        500,
+        ERROR_CODES.SERVER_INTERNAL_ERROR
+      );
     }
-
-    res.status(500).json({ error: 'Error al actualizar el usuario' });
   }
-};
+);
 
-export const deleteUser = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
+export const deleteUser = asyncHandler(
+  async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
 
     if (!id) {
-      res.status(400).json({ error: 'ID es requerido' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.USER.MISSING_ID,
+        400,
+        ERROR_CODES.USER_MISSING_DATA
+      );
     }
 
     const deleted = await userService.deleteUser(id);
 
     if (!deleted) {
-      res.status(404).json({ error: 'Usuario no encontrado' });
-      return;
+      throw new AppError(
+        ERROR_MESSAGES.USER.NOT_FOUND,
+        404,
+        ERROR_CODES.USER_NOT_FOUND
+      );
     }
 
     res.status(204).send();
-  } catch (error) {
-    console.error('Error al eliminar usuario:', error);
-    res.status(500).json({ error: 'Error al eliminar el usuario' });
   }
-};
+);

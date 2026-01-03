@@ -1,0 +1,53 @@
+export const ERROR_MESSAGES = {
+  AUTH: {
+    INVALID_CREDENTIALS: 'Credenciales inválidas',
+    MISSING_EMAIL_PASSWORD: 'Email y contraseña son requeridos',
+    INVALID_EMAIL: 'Email inválido',
+    PROFILE_NOT_FOUND: 'Perfil no encontrado',
+    UNAUTHORIZED: 'No autorizado',
+    TOKEN_EXPIRED: 'Token expirado',
+    TOKEN_INVALID: 'Token inválido',
+  },
+  USER: {
+    NOT_FOUND: 'Usuario no encontrado',
+    ALREADY_EXISTS: 'El usuario ya existe',
+    INVALID_ID: 'ID debe ser un UUID válido',
+    MISSING_ID: 'ID es requerido',
+    MISSING_EMAIL: 'Email es requerido',
+    MISSING_DATA: 'Datos requeridos faltantes',
+    UPDATE_FAILED: 'Error al actualizar el usuario',
+    DELETE_FAILED: 'Error al eliminar el usuario',
+    CREATE_FAILED: 'Error al crear el usuario',
+  },
+  VALIDATION: {
+    INVALID_INPUT: 'Datos de entrada inválidos',
+    MISSING_REQUIRED_FIELDS: 'Campos requeridos faltantes',
+    INVALID_PASSWORD_LENGTH: 'La contraseña debe tener al menos 6 caracteres',
+    FOREIGN_KEY_VIOLATION:
+      'El usuario debe existir primero en auth.users antes de crear el perfil',
+    EMAIL_ALREADY_IN_USE: 'El email ya está en uso',
+  },
+  SERVER: {
+    INTERNAL_ERROR: 'Error interno del servidor',
+    DATABASE_ERROR: 'Error de base de datos',
+  },
+} as const;
+
+export const ERROR_CODES = {
+  AUTH_INVALID_CREDENTIALS: 'AUTH_001',
+  AUTH_MISSING_CREDENTIALS: 'AUTH_002',
+  AUTH_INVALID_EMAIL: 'AUTH_003',
+  AUTH_UNAUTHORIZED: 'AUTH_004',
+  AUTH_TOKEN_EXPIRED: 'AUTH_005',
+  AUTH_TOKEN_INVALID: 'AUTH_006',
+  USER_NOT_FOUND: 'USER_001',
+  USER_ALREADY_EXISTS: 'USER_002',
+  USER_INVALID_ID: 'USER_003',
+  USER_MISSING_DATA: 'USER_004',
+  VALIDATION_ERROR: 'VALIDATION_001',
+  VALIDATION_INVALID_PASSWORD: 'VALIDATION_002',
+  VALIDATION_FOREIGN_KEY: 'VALIDATION_003',
+  VALIDATION_EMAIL_IN_USE: 'VALIDATION_004',
+  SERVER_INTERNAL_ERROR: 'SERVER_001',
+  SERVER_DATABASE_ERROR: 'SERVER_002',
+} as const;
