@@ -49,7 +49,15 @@ export async function createUser(userData: {
   let profile = await getProfileById(createdUser.id);
 
   if (!profile) {
-    throw new Error('Profile was not created by trigger');
+    profile = await createProfile({
+      id: createdUser.id,
+      email: createdUser.email || undefined,
+      full_name:
+        userData.full_name ||
+        (createdUser.raw_user_meta_data as { full_name?: string })?.full_name ||
+        createdUser.email ||
+        undefined,
+    });
   }
 
   if (userData.full_name || userData.bio || userData.avatar_url) {
