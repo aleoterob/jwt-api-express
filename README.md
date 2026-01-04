@@ -386,3 +386,8 @@ npm start
 ## License
 
 ISC
+
+## Author
+
+**Alejandro Otero**  
+Email: aleoterob@gmail.com
