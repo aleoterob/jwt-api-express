@@ -14,7 +14,16 @@ type AsyncFunction = (
 // Exporta una función que recibe un controlador asíncrono y retorna una función que maneja su ejecución.
 // Si la función rechaza (lanza un error), este será capturado y enviado al next() para llegar al middleware de errores.
 export function asyncHandler(fn: AsyncFunction) {
-  return (req: Request, res: Response, next: NextFunction): void => {
-    Promise.resolve(fn(req, res, next)).catch(next);
+  return async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<void> => {
+    try {
+      await fn(req, res, next);
+    } catch (error) {
+      next(error);
+      throw error;
+    }
   };
 }

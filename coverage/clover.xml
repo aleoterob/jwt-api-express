@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1767625624164" clover="3.2.0">
+  <project timestamp="1767625624165" name="All files">
+    <metrics statements="492" coveredstatements="480" conditionals="252" coveredconditionals="224" methods="77" coveredmethods="74" elements="821" coveredelements="778" complexity="0" loc="492" ncloc="492" packages="11" files="28" classes="28"/>
+    <package name="src">
+      <metrics statements="23" coveredstatements="23" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+      <file name="app.ts" path="C:\Projects\jwt-api-express\src\app.ts">
+        <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="31" count="5" type="stmt"/>
+      </file>
+      <file name="db.ts" path="C:\Projects\jwt-api-express\src\db.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.config">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="constants.ts" path="C:\Projects\jwt-api-express\src\config\constants.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+      </file>
+      <file name="errors.ts" path="C:\Projects\jwt-api-express\src\config\errors.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="14" type="stmt"/>
+        <line num="40" count="14" type="stmt"/>
+      </file>
+      <file name="swagger.ts" path="C:\Projects\jwt-api-express\src\config\swagger.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="35" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.db">
+      <metrics statements="21" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="index.ts" path="C:\Projects\jwt-api-express\src\db\index.ts">
+        <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+        <line num="1" count="23" type="stmt"/>
+        <line num="2" count="23" type="stmt"/>
+        <line num="3" count="23" type="stmt"/>
+        <line num="4" count="23" type="stmt"/>
+        <line num="5" count="23" type="stmt"/>
+        <line num="6" count="23" type="stmt"/>
+        <line num="8" count="23" type="stmt"/>
+        <line num="15" count="23" type="stmt"/>
+        <line num="17" count="23" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="22" type="stmt"/>
+        <line num="23" count="22" type="stmt"/>
+        <line num="30" count="22" type="stmt"/>
+        <line num="31" count="22" type="stmt"/>
+      </file>
+      <file name="relations.ts" path="C:\Projects\jwt-api-express\src\db\relations.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="11" count="18" type="stmt"/>
+        <line num="12" count="18" type="stmt"/>
+        <line num="13" count="18" type="stmt"/>
+        <line num="14" count="18" type="stmt"/>
+        <line num="16" count="18" type="stmt"/>
+        <line num="18" count="18" type="stmt"/>
+        <line num="22" count="18" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.db.queries">
+      <metrics statements="139" coveredstatements="138" conditionals="106" coveredconditionals="97" methods="20" coveredmethods="20"/>
+      <file name="auth.queries.ts" path="C:\Projects\jwt-api-express\src\db\queries\auth.queries.ts">
+        <metrics statements="18" coveredstatements="18" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="3" count="8" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="15" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="23" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="31" count="5" type="stmt"/>
+        <line num="36" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="46" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+      </file>
+      <file name="profile.queries.ts" path="C:\Projects\jwt-api-express\src\db\queries\profile.queries.ts">
+        <metrics statements="34" coveredstatements="34" conditionals="25" coveredconditionals="22" methods="7" coveredmethods="7"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="19" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="12" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="30" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="12" type="stmt"/>
+        <line num="34" count="5" type="stmt"/>
+        <line num="35" count="5" type="stmt"/>
+        <line num="36" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="41" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="42" count="4" type="stmt"/>
+        <line num="43" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="53" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="61" count="2" type="stmt"/>
+        <line num="65" count="12" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="74" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="77" count="12" type="stmt"/>
+        <line num="78" count="2" type="stmt"/>
+        <line num="82" count="2" type="stmt"/>
+        <line num="85" count="12" type="stmt"/>
+        <line num="86" count="2" type="stmt"/>
+        <line num="87" count="2" type="stmt"/>
+        <line num="92" count="2" type="stmt"/>
+      </file>
+      <file name="refresh-token.queries.ts" path="C:\Projects\jwt-api-express\src\db\queries\refresh-token.queries.ts">
+        <metrics statements="23" coveredstatements="23" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7"/>
+        <line num="1" count="8" type="stmt"/>
+        <line num="2" count="8" type="stmt"/>
+        <line num="3" count="8" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="26" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="33" count="8" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="50" count="8" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="63" count="8" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="76" count="8" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="80" count="8" type="stmt"/>
+        <line num="81" count="4" type="stmt"/>
+        <line num="84" count="8" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+      </file>
+      <file name="user.queries.ts" path="C:\Projects\jwt-api-express\src\db\queries\user.queries.ts">
+        <metrics statements="64" coveredstatements="63" conditionals="69" coveredconditionals="63" methods="5" coveredmethods="5"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
+        <line num="10" count="11" type="stmt"/>
+        <line num="12" count="11" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="22" count="7" type="stmt"/>
+        <line num="39" count="7" type="stmt"/>
+        <line num="41" count="7" type="stmt"/>
+        <line num="43" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="47" count="6" type="stmt"/>
+        <line num="49" count="6" type="stmt"/>
+        <line num="51" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="3" type="stmt"/>
+        <line num="63" count="6" type="cond" truecount="4" falsecount="1"/>
+        <line num="64" count="6" type="stmt"/>
+        <line num="71" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="75" count="5" type="stmt"/>
+        <line num="81" count="11" type="stmt"/>
+        <line num="82" count="13" type="stmt"/>
+        <line num="83" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="86" count="11" type="stmt"/>
+        <line num="87" count="3" type="stmt"/>
+        <line num="92" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="95" count="11" type="stmt"/>
+        <line num="106" count="11" type="stmt"/>
+        <line num="108" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="109" count="1" type="stmt"/>
+        <line num="112" count="10" type="stmt"/>
+        <line num="116" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="117" count="3" type="stmt"/>
+        <line num="120" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="127" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="128" count="1" type="stmt"/>
+        <line num="131" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="132" count="3" type="stmt"/>
+        <line num="138" count="10" type="stmt"/>
+        <line num="144" count="10" type="stmt"/>
+        <line num="146" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="147" count="1" type="stmt"/>
+        <line num="150" count="9" type="stmt"/>
+        <line num="152" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="153" count="3" type="stmt"/>
+        <line num="161" count="3" type="stmt"/>
+        <line num="168" count="6" type="stmt"/>
+        <line num="170" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="171" count="1" type="stmt"/>
+        <line num="174" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="175" count="2" type="stmt"/>
+        <line num="178" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="179" count="1" type="stmt"/>
+        <line num="182" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="183" count="1" type="stmt"/>
+        <line num="186" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="187" count="3" type="stmt"/>
+        <line num="188" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="189" count="3" type="stmt"/>
+        <line num="194" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="195" count="0" type="stmt"/>
+        <line num="198" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.db.schema.auth">
+      <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="refresh_tokens.ts" path="C:\Projects\jwt-api-express\src\db\schema\auth\refresh_tokens.ts">
+        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="1" count="19" type="stmt"/>
+        <line num="8" count="19" type="stmt"/>
+        <line num="10" count="19" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="27" count="18" type="stmt"/>
+      </file>
+      <file name="users.ts" path="C:\Projects\jwt-api-express\src\db\schema\auth\users.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="20" type="stmt"/>
+        <line num="11" count="20" type="stmt"/>
+        <line num="13" count="20" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.db.schema.public">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="profiles.ts" path="C:\Projects\jwt-api-express\src\db\schema\public\profiles.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="20" type="stmt"/>
+        <line num="6" count="20" type="stmt"/>
+        <line num="18" count="18" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.errors">
+      <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <file name="AppError.ts" path="C:\Projects\jwt-api-express\src\errors\AppError.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="1" count="14" type="stmt"/>
+        <line num="12" count="60" type="stmt"/>
+        <line num="13" count="60" type="stmt"/>
+        <line num="14" count="60" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="60" type="stmt"/>
+        <line num="17" count="60" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.middleware">
+      <metrics statements="20" coveredstatements="20" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2"/>
+      <file name="auth.middleware.ts" path="C:\Projects\jwt-api-express\src\middleware\auth.middleware.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="12" count="12" type="cond" truecount="4" falsecount="0"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="14" count="10" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+      <file name="error.middleware.ts" path="C:\Projects\jwt-api-express\src\middleware\error.middleware.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="10" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="19" count="9" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.modules.auth">
+      <metrics statements="93" coveredstatements="88" conditionals="34" coveredconditionals="31" methods="12" coveredmethods="12"/>
+      <file name="auth.controller.ts" path="C:\Projects\jwt-api-express\src\modules\auth\auth.controller.ts">
+        <metrics statements="38" coveredstatements="38" conditionals="14" coveredconditionals="14" methods="3" coveredmethods="3"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="17" count="9" type="cond" truecount="4" falsecount="0"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="26" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="35" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="4" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="54" count="3" type="stmt"/>
+        <line num="62" count="3" type="stmt"/>
+        <line num="76" count="6" type="stmt"/>
+        <line num="78" count="5" type="stmt"/>
+        <line num="79" count="5" type="stmt"/>
+        <line num="81" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="82" count="2" type="stmt"/>
+        <line num="89" count="3" type="stmt"/>
+        <line num="90" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="94" count="3" type="stmt"/>
+        <line num="100" count="3" type="stmt"/>
+        <line num="108" count="3" type="stmt"/>
+        <line num="116" count="3" type="stmt"/>
+        <line num="130" count="6" type="stmt"/>
+        <line num="132" count="4" type="stmt"/>
+        <line num="133" count="4" type="stmt"/>
+        <line num="135" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="136" count="1" type="stmt"/>
+        <line num="139" count="4" type="stmt"/>
+        <line num="146" count="4" type="stmt"/>
+        <line num="153" count="4" type="stmt"/>
+      </file>
+      <file name="auth.repository.ts" path="C:\Projects\jwt-api-express\src\modules\auth\auth.repository.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+      </file>
+      <file name="auth.routes.ts" path="C:\Projects\jwt-api-express\src\modules\auth\auth.routes.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="59" count="5" type="stmt"/>
+        <line num="96" count="5" type="stmt"/>
+        <line num="120" count="5" type="stmt"/>
+        <line num="122" count="5" type="stmt"/>
+      </file>
+      <file name="auth.service.ts" path="C:\Projects\jwt-api-express\src\modules\auth\auth.service.ts">
+        <metrics statements="39" coveredstatements="34" conditionals="20" coveredconditionals="17" methods="4" coveredmethods="4"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="16" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="66" count="6" type="stmt"/>
+        <line num="70" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="78" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="87" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="95" count="3" type="stmt"/>
+        <line num="96" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="97" count="1" type="stmt"/>
+        <line num="104" count="2" type="stmt"/>
+        <line num="105" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="113" count="1" type="stmt"/>
+        <line num="118" count="1" type="stmt"/>
+        <line num="119" count="1" type="stmt"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="129" count="1" type="stmt"/>
+        <line num="131" count="1" type="stmt"/>
+        <line num="140" count="2" type="stmt"/>
+        <line num="144" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="145" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.modules.user">
+      <metrics statements="139" coveredstatements="135" conditionals="86" coveredconditionals="71" methods="27" coveredmethods="25"/>
+      <file name="user.controller.ts" path="C:\Projects\jwt-api-express\src\modules\user\user.controller.ts">
+        <metrics statements="101" coveredstatements="99" conditionals="84" coveredconditionals="69" methods="8" coveredmethods="8"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="23" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="33" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="48" count="6" type="stmt"/>
+        <line num="50" count="5" type="stmt"/>
+        <line num="52" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="60" count="3" type="stmt"/>
+        <line num="62" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="77" count="6" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="87" count="6" type="stmt"/>
+        <line num="89" count="8" type="stmt"/>
+        <line num="95" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="96" count="2" type="stmt"/>
+        <line num="104" count="6" type="stmt"/>
+        <line num="105" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="106" count="2" type="stmt"/>
+        <line num="113" count="4" type="stmt"/>
+        <line num="114" count="4" type="stmt"/>
+        <line num="115" count="1" type="stmt"/>
+        <line num="120" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="121" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="126" count="1" type="stmt"/>
+        <line num="133" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="138" count="1" type="stmt"/>
+        <line num="145" count="1" type="stmt"/>
+        <line num="154" count="6" type="stmt"/>
+        <line num="156" count="8" type="stmt"/>
+        <line num="165" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="166" count="2" type="stmt"/>
+        <line num="173" count="6" type="stmt"/>
+        <line num="174" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="175" count="2" type="stmt"/>
+        <line num="182" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="183" count="2" type="stmt"/>
+        <line num="197" count="2" type="stmt"/>
+        <line num="202" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="203" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="204" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="205" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="207" count="2" type="stmt"/>
+        <line num="208" count="2" type="stmt"/>
+        <line num="210" count="1" type="stmt"/>
+        <line num="223" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="229" count="1" type="stmt"/>
+        <line num="235" count="0" type="stmt"/>
+        <line num="244" count="6" type="stmt"/>
+        <line num="246" count="7" type="stmt"/>
+        <line num="247" count="7" type="stmt"/>
+        <line num="256" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="257" count="1" type="stmt"/>
+        <line num="265" count="6" type="stmt"/>
+        <line num="266" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="267" count="1" type="stmt"/>
+        <line num="274" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="275" count="4" type="stmt"/>
+        <line num="276" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="277" count="1" type="stmt"/>
+        <line num="285" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="286" count="1" type="stmt"/>
+        <line num="300" count="3" type="stmt"/>
+        <line num="302" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="303" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="304" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="305" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="306" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="307" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="309" count="3" type="stmt"/>
+        <line num="310" count="3" type="stmt"/>
+        <line num="312" count="1" type="stmt"/>
+        <line num="325" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="326" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="327" count="1" type="stmt"/>
+        <line num="334" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="338" count="1" type="stmt"/>
+        <line num="345" count="0" type="stmt"/>
+        <line num="354" count="6" type="stmt"/>
+        <line num="356" count="3" type="stmt"/>
+        <line num="358" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="359" count="1" type="stmt"/>
+        <line num="366" count="2" type="stmt"/>
+        <line num="368" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="369" count="1" type="stmt"/>
+        <line num="376" count="1" type="stmt"/>
+      </file>
+      <file name="user.repository.ts" path="C:\Projects\jwt-api-express\src\modules\user\user.repository.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="9"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+      </file>
+      <file name="user.routes.ts" path="C:\Projects\jwt-api-express\src\modules\user\user.routes.ts">
+        <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="42" count="5" type="stmt"/>
+        <line num="68" count="5" type="stmt"/>
+        <line num="106" count="5" type="stmt"/>
+        <line num="144" count="5" type="stmt"/>
+        <line num="190" count="5" type="stmt"/>
+        <line num="244" count="5" type="stmt"/>
+        <line num="305" count="5" type="stmt"/>
+        <line num="366" count="5" type="stmt"/>
+        <line num="395" count="5" type="stmt"/>
+        <line num="397" count="5" type="stmt"/>
+      </file>
+      <file name="user.service.ts" path="C:\Projects\jwt-api-express\src\modules\user\user.service.ts">
+        <metrics statements="12" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="8"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="9" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="33" coveredstatements="32" conditionals="8" coveredconditionals="7" methods="9" coveredmethods="9"/>
+      <file name="asyncHandler.ts" path="C:\Projects\jwt-api-express\src\utils\asyncHandler.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="69" type="stmt"/>
+        <line num="22" count="59" type="stmt"/>
+        <line num="23" count="59" type="stmt"/>
+        <line num="25" count="40" type="stmt"/>
+        <line num="26" count="40" type="stmt"/>
+      </file>
+      <file name="auth.ts" path="C:\Projects\jwt-api-express\src\utils\auth.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="9" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+      </file>
+      <file name="jwt.ts" path="C:\Projects\jwt-api-express\src\utils\jwt.ts">
+        <metrics statements="16" coveredstatements="15" conditionals="8" coveredconditionals="7" methods="3" coveredmethods="3"/>
+        <line num="1" count="8" type="stmt"/>
+        <line num="2" count="8" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="26" count="8" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="29" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

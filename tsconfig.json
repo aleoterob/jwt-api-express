@@ -6,7 +6,7 @@
     "outDir": "./dist",
 
     "moduleResolution": "node",
-    "types": ["node"],
+    "types": ["node", "jest"],
 
     "sourceMap": true,
 
@@ -19,6 +19,6 @@
 
     "skipLibCheck": true
   },
-  "include": ["src", "drizzle.config.ts"],
+  "include": ["src", "drizzle.config.ts", "__tests__", "__tests__/setup.ts"],
   "exclude": ["node_modules", "dist"]
 }
